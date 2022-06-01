@@ -3,7 +3,7 @@
 		"access": "restricted"
 	},
 	"name": "@chiel/test-a",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"repository": {
 		"directory": "packages/test-a",
 		"url": "github:chiel/pnpm-monorepo"
