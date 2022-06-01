@@ -5,6 +5,7 @@
 	"name": "@chiel/test-a",
 	"version": "0.1.5",
 	"repository": {
+		"type": "git",
 		"directory": "packages/test-a",
 		"url": "github:chiel/pnpm-monorepo"
 	},
