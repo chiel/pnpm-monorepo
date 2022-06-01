@@ -125,4 +125,4 @@ jobs:
           echo '//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}' >> .npmrc
           git update-index --assume-unchanged .npmrc
       - name: Publish packages
-        run: node_modules/.bin/lerna publish from-git
+        run: node_modules/.bin/lerna publish from-git --no-verify-access
