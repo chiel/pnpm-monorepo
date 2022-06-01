@@ -118,5 +118,7 @@ jobs:
         run: |
           git config --global user.email "${{ env.COMMIT_AUTHOR_EMAIL }}"
           git config --global user.name "${{ env.COMMIT_AUTHOR_NAME }}"
-      - name: Version packages
+      - name: Version and commit packages
         run: node_modules/.bin/lerna version
+      - name: Publish packages
+        run: node_modules/.bin/lerna publish from-git
