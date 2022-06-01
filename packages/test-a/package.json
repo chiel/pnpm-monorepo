@@ -8,6 +8,9 @@
 		"directory": "packages/test-a",
 		"url": "github:chiel/pnpm-monorepo"
 	},
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "mkdir dist && echo 'test-a' > dist/boop"
 	}
