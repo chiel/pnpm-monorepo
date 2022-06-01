@@ -1,5 +1,11 @@
 {
 	"private": true,
 	"name": "pnpm-monorepo",
-	"repository": "github:chiel/pnpm-monorepo"
+	"repository": "github:chiel/pnpm-monorepo",
+	"workspaces": [
+		"packages/*"
+	],
+	"devDependencies": {
+		"lerna": "^5.0.0"
+	}
 }
