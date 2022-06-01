@@ -81,7 +81,7 @@ jobs:
           name: version-artifacts
           path: packages
       - name: Build changed packages
-        run: node_modules/.bin/lerna run build --scope={${{ needs.changed.outputs.packages }}} --include-dependencies
+        run: node_modules/.bin/lerna run build --scope={,${{ needs.changed.outputs.packages }}} --include-dependencies
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
