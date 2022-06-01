@@ -121,4 +121,6 @@ jobs:
       - name: Version and commit packages
         run: node_modules/.bin/lerna version
       - name: Publish packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node_modules/.bin/lerna publish from-git
