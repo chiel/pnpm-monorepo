@@ -1,0 +1,11 @@
+{
+	"publishConfig": {
+		"access": "restricted"
+	},
+	"name": "@chiel/test-b",
+	"version": "0.0.0",
+	"repository": {
+		"directory": "packages/test-b",
+		"url": "github:chiel/pnpm-monorepo"
+	}
+}
