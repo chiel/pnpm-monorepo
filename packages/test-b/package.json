@@ -3,7 +3,7 @@
 		"access": "restricted"
 	},
 	"name": "@chiel/test-b",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"repository": {
 		"type": "git",
 		"directory": "packages/test-b",
