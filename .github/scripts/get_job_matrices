@@ -16,13 +16,17 @@ const argv = yargs(hideBin(process.argv))
 	.help()
 	.argv;
 
-const packages = argv.packages.map(pkgName => ({
-	name: pkgName,
-	path: path.resolve(__dirname, '../..', 'packages', pkgName.replace(/^[^\/]+\//, '')),
-}));
+const packages = argv.packages.map(pkgName => {
+	const pkgDir = pkgName.replace(/^[^\/]+\//, '');
+	return {
+		name: pkgName,
+		path: path.resolve(__dirname, '../..', 'packages', pkgDir),
+		dir: pkgDir,
+	}
+});
 
 const jobs = Object.entries(resolvers).reduce((acc, [job, resolver]) => {
-	const jobPackages = packages.filter(pkg => resolver(pkg)).map(pkg => pkg.name);
+	const jobPackages = packages.filter(pkg => resolver(pkg)).map(pkg => pkg.dir);
 	if (!jobPackages.length) return acc;
 	return { ...acc, [job]: jobPackages };
 }, {});
