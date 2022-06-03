@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+const path = require('path');
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
+const resolvers = require('./resolvers');
+
+const argv = yargs(hideBin(process.argv))
+	.command('$0 [packages]', 'Get a list of which jobs to execute and for which packages.', yargs => {
+		yargs.positional('packages', {
+			describe: 'Comma-separated list of package names.',
+			type: 'string',
+			coerce: arg => arg ? arg.split(',') : [],
+		});
+	})
+	.help()
+	.argv;
+
+const packages = argv.packages.map(pkgName => ({
+	name: pkgName,
+	path: path.resolve(__dirname, '../..', 'packages', pkgName.replace(/^[^\/]+\//, '')),
+}));
+
+const jobs = Object.entries(resolvers).reduce((acc, [job, resolver]) => {
+	const jobPackages = packages.filter(pkg => resolver(pkg)).map(pkg => pkg.name);
+	if (!jobPackages.length) return acc;
+	return { ...acc, [job]: jobPackages };
+}, {});
+
+console.log(JSON.stringify(jobs));
