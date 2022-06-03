@@ -120,9 +120,7 @@ jobs:
           git config --global user.name "${{ env.COMMIT_AUTHOR_NAME }}"
       - name: Version and commit packages
         run: node_modules/.bin/lerna version
-      - name: Set GitHub Packages auth token
-        run: |
-          echo '//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}' >> .npmrc
-          git update-index --assume-unchanged .npmrc
       - name: Publish packages
         run: node_modules/.bin/lerna publish from-git --no-verify-access
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
