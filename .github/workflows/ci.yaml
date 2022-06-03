@@ -124,7 +124,7 @@ jobs:
       github.ref == 'refs/heads/master' &&
       needs.changed.outputs.packages != null &&
       needs.packages-build.result == 'success' &&
-      needs.docker-lint.result == 'success'
+      (needs.docker-lint.result == 'success' || needs.docker-lint.result == 'skipped')
     steps:
       - uses: actions/checkout@v3
         with:
