@@ -6,8 +6,8 @@
 	"version": "0.2.0",
 	"repository": {
 		"type": "git",
-		"directory": "packages/test-a",
-		"url": "github:chiel/pnpm-monorepo"
+		"url": "github:chiel/pnpm-monorepo",
+		"directory": "packages/test-a"
 	},
 	"files": [
 		"dist"
