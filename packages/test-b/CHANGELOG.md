@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-b@0.2.3...@chiel/test-b@0.3.0) (2022-06-04)
+
+
+### Features
+
+* **test-b:** add test k8s template ([e213365](https://github.com/chiel/pnpm-monorepo/commit/e213365ebeb7dcfa8b5ab004f5810bf4556d5293))
+
+
+
+
+
 ## [0.2.3](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-b@0.2.2...@chiel/test-b@0.2.3) (2022-06-04)
 
 
