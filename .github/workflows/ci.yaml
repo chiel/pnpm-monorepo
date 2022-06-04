@@ -160,6 +160,7 @@ jobs:
       - changed
       - docker-build
     if: |
+      always() &&
       github.ref == 'refs/heads/master' &&
       needs.changed.outputs.matrices != null &&
       fromJSON(needs.changed.outputs.matrices).kubernetes-deploy != null &&
