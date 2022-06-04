@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-a@0.3.1...@chiel/test-a@0.3.2) (2022-06-04)
+
+
+### Bug Fixes
+
+* **test-a:** fix dockerfile ([b152188](https://github.com/chiel/pnpm-monorepo/commit/b15218864cdab5e33a62588a70c1eff9227d6193))
+* **test-a:** force build ([cafa373](https://github.com/chiel/pnpm-monorepo/commit/cafa3731697e88429f867fc3e7aefc67dccb5661))
+
+
+
+
+
 ## [0.3.1](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-a@0.3.0...@chiel/test-a@0.3.1) (2022-06-04)
 
 
