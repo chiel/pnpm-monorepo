@@ -162,7 +162,8 @@ jobs:
     if: |
       github.ref == 'refs/heads/master' &&
       needs.changed.outputs.matrices != null &&
-      fromJSON(needs.changed.outputs.matrices).kubernetes-deploy != null
+      fromJSON(needs.changed.outputs.matrices).kubernetes-deploy != null &&
+      (needs.docker-build.result == 'success' || needs.docker-build.result == 'skipped')
     strategy:
       matrix:
         package: ${{ fromJSON(needs.changed.outputs.matrices).kubernetes-deploy }}
