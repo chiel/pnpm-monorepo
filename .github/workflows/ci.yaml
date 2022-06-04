@@ -170,9 +170,19 @@ jobs:
         package: ${{ fromJSON(needs.changed.outputs.matrices).kubernetes-deploy }}
     steps:
       - uses: actions/checkout@v3
+      - uses: azure/setup-kubectl@v2.1
+      - uses: actions/download-artifact@v3
+        with:
+          name: version-artifacts
+          path: packages
+      - name: Generate kubernetes manifest
+        run: |
+          export RELEASE="v$(jq -r .version packages/${{ matrix.package }}/package.json)"
+          envsubst < packages/${{ matrix.package }}/.k8s.template.yaml >> packages/${{ matrix.package }}/.k8s.yaml
       - run: |
           echo "packages/${{ matrix.package }}"
           ls -lA packages/${{ matrix.package }}
+          cat packages/${{ matrix.package }}/.k8s.yaml
 
   publish:
     name: Publish
