@@ -159,13 +159,15 @@ jobs:
     needs:
       - changed
       - packages-build
+      - docker-lint
       - docker-build
     if: |
       always() &&
       github.ref == 'refs/heads/master' &&
       needs.changed.outputs.packages != null &&
       needs.packages-build.result == 'success' &&
-      (needs.packages-build.result == 'success' || needs.packages-build.result == 'skipped')
+      (needs.docker-lint.result == 'success' || needs.docker-lint.result == 'skipped') &&
+      (needs.docker-build.result == 'success' || needs.docker-build.result == 'skipped')
     steps:
       - uses: actions/checkout@v3
         with:
