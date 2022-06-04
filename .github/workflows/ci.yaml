@@ -179,10 +179,10 @@ jobs:
         run: |
           export RELEASE="v$(jq -r .version packages/${{ matrix.package }}/package.json)"
           envsubst < packages/${{ matrix.package }}/.k8s.template.yaml >> packages/${{ matrix.package }}/.k8s.yaml
-      - run: |
-          echo "packages/${{ matrix.package }}"
-          ls -lA packages/${{ matrix.package }}
-          cat packages/${{ matrix.package }}/.k8s.yaml
+      - name: Create .kubeconfig
+        run: echo "${{ secrets.KUBECONFIG }}" > .kubeconfig
+      - name: Apply kubernetes manifests
+        run: kubectl --kubeconfig=.kubeconfig apply -f packages/${{ matrix.package }}/.k8s.yaml
 
   publish:
     name: Publish
