@@ -1,0 +1,12 @@
+name: Job matrices
+description: Get job matrices for changed packages
+inputs:
+  changed_packages:
+    description: Comma-separated list of changed packages
+    required: true
+outputs:
+  matrices:
+    description: A json object representing which packages each job should be run for
+runs:
+  using: node16
+  main: index.js
