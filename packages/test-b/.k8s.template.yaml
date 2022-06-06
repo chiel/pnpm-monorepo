@@ -11,3 +11,4 @@ metadata:
     app.kubernetes.io/managed-by: github-actions
 data:
   NODE_ENV: production
+  STUFF: ${STUFF}
