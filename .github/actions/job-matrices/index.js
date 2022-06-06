@@ -2,11 +2,9 @@ const core = require('@actions/core');
 const path = require('path');
 
 const resolvers = require('./resolvers');
-console.log('RESOLVERS', resolvers);
 
 try {
 	const parsedPackages = core.getInput('packages').split(',');
-	console.log(`PACKAGES: ${parsedPackages}`);
 
 	const packages = parsedPackages.map(pkgName => {
 		const pkgDir = pkgName.replace(/^[^\/]+\//, '');
@@ -17,17 +15,14 @@ try {
 		};
 	});
 
-	console.log('PACKAGES', packages);
-
 	const jobs = Object.entries(resolvers).reduce((acc, [job, resolver]) => {
 		const jobPackages = packages.filter(pkg => resolver(pkg)).map(pkg => pkg.dir);
 		if (!jobPackages.length) return acc;
 		return { ...acc, [job]: jobPackages };
 	}, {});
 
-	console.log('JOBS', jobs);
-
-	core.setOutput('job_matrices', {});
+	console.log('matrices', jobs);
+	core.setOutput('matrices', JSON.stringify(jobs));
 } catch (error) {
 	core.setFailed(error.message);
 }

@@ -5,7 +5,7 @@ inputs:
     description: Comma-separated list of changed packages
     required: true
 outputs:
-  job_matrices:
+  matrices:
     description: A json object representing which packages each job should be run for
 runs:
   using: node16

@@ -50,11 +50,9 @@ jobs:
       - name: Get changed packages
         id: packages
         run: echo "::set-output name=packages ::$((node_modules/.bin/lerna changed --loglevel silent || true) | paste -sd, -)"
-      - name: Generate matrices of jobs for changed packages
-        if: steps.packages.outputs.packages != null
+      - name: Get job matrices for changed packages
+        uses: ./.github/actions/job-matrices
         id: matrices
-        run: echo "::set-output name=matrices ::$(./.github/scripts/get_job_matrices ${{ steps.packages.outputs.packages }})"
-      - uses: ./.github/actions/job-matrices
         if: steps.packages.outputs.packages != null
         with:
           packages: ${{ steps.packages.outputs.packages }}
