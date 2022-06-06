@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 
-const resolvers = require('./resolver');
+const resolvers = require('./resolvers');
 
 try {
 	const packages = core.getInput('packages');
