@@ -4,27 +4,6 @@ on:
       - "**"
 
 jobs:
-  create_deploy_env:
-    name: Create deploy env
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          cat <<EOF > deploy.env
-          export STUFF=boop
-          EOF
-      - name: Upload deploy env
-        uses: actions/upload-artifact@v3
-        with:
-          name: deploy-env
-          path: deploy.env
-
   call_reusable_workflow:
     name: Shared
-    needs:
-      - create_deploy_env
-    uses: chiel/pnpm-monorepo/.github/workflows/reusable.yaml@master
-    with:
-      publish_author_name: Chiel Kunkels
-      publish_author_email: chiel@kunkels.me
-    secrets:
-      kubeconfig: "${{ secrets.KUBECONFIG }}"
+    uses: chiel/ci/.github/workflows/monorepo.yaml@master
