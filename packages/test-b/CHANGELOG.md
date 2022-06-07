@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-b@0.3.3...@chiel/test-b@0.4.0) (2022-06-07)
+
+
+### Features
+
+* **ci:** try reusable workflow ([4d9d4a5](https://github.com/chiel/pnpm-monorepo/commit/4d9d4a57e5c3506acbf7d3df636240dceb60c54f))
+
+
+
+
+
 ## [0.3.3](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-b@0.3.2...@chiel/test-b@0.3.3) (2022-06-04)
 
 
