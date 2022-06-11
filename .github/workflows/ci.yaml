@@ -4,11 +4,12 @@ on:
       - "**"
 
 jobs:
-  call_reusable_workflow:
-    name: Shared
+  ci:
+    name: CI
     uses: chiel/ci/.github/workflows/monorepo.yaml@master
     with:
       publish_author_name: Chiel Kunkels
       publish_author_email: chiel@kunkels.me
     secrets:
       github_pat: ${{ secrets.GITHUB_TOKEN }}
+      kubeconfig: "${{ secrets.KUBECONFIG }}"
