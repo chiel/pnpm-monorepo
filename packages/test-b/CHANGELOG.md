@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-b@0.4.2...@chiel/test-b@0.4.3) (2022-06-11)
+
+
+### Bug Fixes
+
+* **test-b:** remove unused configmap value ([a836303](https://github.com/chiel/pnpm-monorepo/commit/a836303951be1422e7ef59e8470938fe143b45b5))
+
+
+
+
+
 ## [0.4.2](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-b@0.4.1...@chiel/test-b@0.4.2) (2022-06-11)
 
 
