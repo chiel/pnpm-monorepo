@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-b@0.5.1...@chiel/test-b@0.5.2) (2022-06-12)
+
+
+### Bug Fixes
+
+* add some 0-coverage tests ([2a6e762](https://github.com/chiel/pnpm-monorepo/commit/2a6e7624ddeceaccc8c2b559a1175695b40bae52))
+* set up jest ([ec81a43](https://github.com/chiel/pnpm-monorepo/commit/ec81a439e2ecec9d6be43f1d2d0cb947945196d8))
+* **test-b:** coverage ([28c0549](https://github.com/chiel/pnpm-monorepo/commit/28c0549817d38d725720683b88b98e26c35d4889))
+
+
+
+
+
 ## [0.5.1](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-b@0.5.0...@chiel/test-b@0.5.1) (2022-06-12)
 
 
