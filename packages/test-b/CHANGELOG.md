@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-b@0.4.4...@chiel/test-b@0.5.0) (2022-06-12)
+
+
+### Features
+
+* add some code ([556d237](https://github.com/chiel/pnpm-monorepo/commit/556d237b125320b31c8df76b5f1b4840dd45eb8f))
+
+
+
+
+
 ## [0.4.4](https://github.com/chiel/pnpm-monorepo/compare/@chiel/test-b@0.4.3...@chiel/test-b@0.4.4) (2022-06-11)
 
 
